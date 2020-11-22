@@ -8,7 +8,32 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="src/img/favicon.png" />
+<!-- firebase -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBWE0x09WBoqpjRGdMhvU8OMeAvqg8TzOE",
+    authDomain: "blog-b0378.firebaseapp.com",
+    databaseURL: "https://blog-b0378.firebaseio.com",
+    projectId: "blog-b0378",
+    storageBucket: "blog-b0378.appspot.com",
+    messagingSenderId: "581543225258",
+    appId: "1:581543225258:web:ead74151a186a6a1252dd3",
+    measurementId: "G-NYQ2C6ZS4P"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<!-- end firebase -->
   <!-- css -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap">
   <link rel="stylesheet" href="src/app/css/uikit-custom.min.css" />
