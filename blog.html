@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mhusen's notes</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style type="text/css">
+	.blog{
+		padding: 3%;
+	}
+.row {
+	margin-left: 0px!important;
+	margin-right: 0px!important;
+}
+.judul{
+	float: left;
+
+}
+.read{
+	float: right;
+}
+</style>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+<!-- end firebase -->
+</head>
+<body onload="tampilData();">
+	<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">mhusen's notes |</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="index.html">Home </a>
+    </div>
+  </div>
+</nav>
+<!-- end -->
+<div class="row">
+	<div class="col-12 blog">
+		<div class="row" id="data-judul">
+			<table id="tabel-status-alat" class="table  able-hover">
+<thead class="thead-">
+<tr>
+
+
+</tr>
+</thead>
+<tbody>
+ 
+</tbody>
+</table>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+	 var firebaseConfig = {
+    apiKey: "AIzaSyBWE0x09WBoqpjRGdMhvU8OMeAvqg8TzOE",
+    authDomain: "blog-b0378.firebaseapp.com",
+    databaseURL: "https://blog-b0378.firebaseio.com",
+    projectId: "blog-b0378",
+    storageBucket: "blog-b0378.appspot.com",
+    messagingSenderId: "581543225258",
+    appId: "1:581543225258:web:ead74151a186a6a1252dd3",
+    measurementId: "G-NYQ2C6ZS4P"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+ 
+// Menampilkan data dalam bentuk tabel
+function tampilData()
+{
+ 
+// Buat referensi database firebase
+var dbRef = firebase.database();
+var statusAlat = dbRef.ref("blog");
+ 
+// Dapatkan referensi table
+
+var table = document.getElementById("tabel-status-alat").getElementsByTagName('tbody')[0];
+ 
+// Membuang semua isi table
+$("#tabel-status-alat").find("tr:gt(0)").remove();
+ 
+// Memuat Data
+statusAlat.on("child_added", function(data, prevChildKey) {
+var newstatusAlat = data.val();
+ 
+var row = table.insertRow(table.rows.length);
+ 
+var cell1 = row.insertCell(0);
+
+ 
+cell1.innerHTML = '<div class="col-12 "><div class="judul">'+newstatusAlat.judul+'</div><div class="read"><a href="desc.html" class="btn btn-primary">read more</a></div></div>';
+localStorage.setItem("date", newstatusAlat.date);
+localStorage.setItem("isi", newstatusAlat.desc);
+ 
+});
+}
+
+</script>

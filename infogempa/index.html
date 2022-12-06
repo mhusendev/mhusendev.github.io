@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Infogempa.gempa Bumi</title>
+    <link rel="stylesheet" href="./assets/input.css">
+</head>
+<style>
+
+</style>
+<body class="bg-slate-700">
+ <div class="w-full h-16 bg-blue-600">
+   <h1 class="text-white uppercase text-center font-semibold">Earth Quake Detector</h1>
+   <p class="text-white  text-center">(Data From BMKG)</p> 
+</div>
+<div class="w-full h-fit   lg:pl-10 lg:pr-10" id="data">
+ 
+    
+</div>
+</body>
+</html>
+
+<script>
+
+    fetch('https://be1e-180-252-127-151.ap.ngrok.io/gempa').then(res => res.json()).then((res)=> {
+        if(res.Infogempa.gempa.length) {
+            for(i in res.Infogempa.gempa){
+           document.getElementById('data').innerHTML += `<div class="w-90 mb-6 h-fit pt-5 pb-5 pr-5 pl-3 bg-pink-700  shadow-sm shadow-cyan-400">
+      
+      <div class="border-b-2 border-white w-fit pl-2">  <h1 class="text-white uppercase text-center font-semibold">${res.Infogempa.gempa[i].Tanggal}</h1></div>
+     <table class="bg-slate-700  table-auto min-w-full  text-white mt-1 m-2 p-10">
+      <thead class="border border-white">
+          <tr>
+            <th class="border border-white p-2">Jam</th>
+              <th class="border border-white p-2">Kordinat</th>
+              <th class="border border-white p-2">Magnitudo</th>
+              <th class="border border-white p-2">wilayah</th>
+          </tr>
+      </thead>
+      <tbody class="text-xs text-center">
+          <tr>
+              <td>
+                  ${res.Infogempa.gempa[i].Jam}
+              </td>
+              <td>
+                ${res.Infogempa.gempa[i].Coordinates}
+              </td>
+              <td>
+                ${res.Infogempa.gempa[i].Magnitude}
+              </td>
+              <td>
+                ${res.Infogempa.gempa[i].Wilayah}
+              </td>
+
+          </tr>
+      </tbody>
+     </table>
+     <p class="text-white"> [ ${res.Infogempa.gempa[i].Potensi}, Kedalaman ${res.Infogempa.gempa[i].Kedalaman} ] </p>
+     <br>
+     <iframe src="//maps.google.com/maps?q=${res.Infogempa.gempa[i].Coordinates}&z=15&output=embed" class="w-full h-56"></iframe>
+     
+     </div>`
+            }
+        } else {
+            document.getElementById('data').innerHTML = `<div class="w-90h-fit pt-5 pb-5 pr-5 bg-pink-700 rounded-md shadow-sm shadow-cyan-400 mb-10">
+      
+      <div class="border-b-2 border-white w-fit pl-2">  <h1 class="text-white uppercase text-center font-semibold">${res.Infogempa.gempa.Tanggal}</h1></div>
+     <table class="bg-slate-700 table-auto min-w-full  text-white mt-1 m-2 p-10">
+      <thead class="border border-white">
+          <tr>
+              <th class="border border-white p-2">Jam</th>
+              <th class="border border-white p-2">Kordinat</th>
+              <th class="border border-white p-2">Magnitudo</th>
+              <th class="border border-white p-2">wilayah</th>
+            
+
+          </tr>
+      </thead>
+      <tbody class="text-xs text-center">
+          <tr>
+              <td>
+                  ${res.Infogempa.gempa.Jam}
+              </td>
+              <td>
+                ${res.Infogempa.gempa.Coordinates}
+              </td>
+              <td>
+                ${res.Infogempa.gempa.Magnitude}
+              </td>
+              <td>
+                ${res.Infogempa.gempa.Wilayah}
+              </td>
+
+          </tr>
+      </tbody>
+     </table>
+
+     <p class="text-white"> [ ${res.Infogempa.gempa.Potensi}, Kedalaman ${res.Infogempa.gempa.kedalaman} </p>
+     <br>
+     <iframe src="//maps.google.com/maps?q=${res.Infogempa.gempa[i].Coordinates}&z=15&output=embed" class="w-full h-56"></iframe>
+     </div>`
+        }
+    })
+</script>

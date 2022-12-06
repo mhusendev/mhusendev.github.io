@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>mhusen's notes</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style type="text/css">
+	.blog{
+		padding: 3%;
+	}
+.row {
+	margin-left: 0px!important;
+	margin-right: 0px!important;
+}
+.judul{
+	float: left;
+
+}
+.read{
+	float: right;
+	margin-right: 5%;
+	margin-bottom: 5%;
+}
+</style>
+
+</head>
+<body onload="data();">
+	<!-- navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="blog.html">Back |</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    	
+    </div>
+  </div>
+</nav>
+<!-- end -->
+
+<div class="row">
+	
+	<div class="col-12 blog">
+		
+		<div class="row" id="data-judul">
+		 
+           <div class="read" id="date"></div><br>
+	      <p id="isi"></p>
+		</div>
+	</div>
+</div>
+
+
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+	
+
+
+	function data(){
+	document.getElementById("isi").innerHTML= localStorage.getItem("isi");
+ document.getElementById("date").innerHTML= localStorage.getItem("date");
+	}
+</script>
