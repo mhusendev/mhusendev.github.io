@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb
 
    </style>
   </head>
-<body class="dark:bg-slate-900 overflow-x-hidden">
+<body class="dark:bg-slate-900 overflow-x-hidden bg-slate-900 ">
    
   <div class="w-screen navbar bg-slate-900 fixed z-10 shadow-lg" data-aos="zoom" data-aos-duration="2000">
     <div class="navbar-start">
@@ -49,11 +49,11 @@ body::-webkit-scrollbar-thumb
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </label>
         <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Home</a></li>
+          <li><a href="#home">Home</a></li>
         
-          <li><a>Skills</a></li>
-          <li><a>Experience</a></li>
-          <li><a>Portofolio</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#portofolio">Portofolio</a></li>
         </ul>
       </div>
     
@@ -62,10 +62,10 @@ body::-webkit-scrollbar-thumb
     </div>
     <div class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
-        <li><a>Home</a></li>
-        <li><a>Skills</a></li>
-        <li><a>Experience</a></li>
-        <li><a>Portfolio</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#portofolio">Portfolio</a></li>
         
       </ul>
     </div>
@@ -75,7 +75,7 @@ body::-webkit-scrollbar-thumb
   </div>
 
   <!-- header content start -->
-  <div class="w-full h-fit bg-slate-900  md:pt-[4%] pt-[6%] " >
+  <div class="w-full h-fit bg-slate-900  md:pt-[4%] pt-[6%] " id="home">
    
   <div class="w-ful shadow shadow-blue-400   py-5 relative" data-aos="fade-down"
   data-aos-duration="2000"
@@ -151,10 +151,10 @@ body::-webkit-scrollbar-thumb
     </div>
 <!-- end edu -->
 <!-- skils -->
-    <div class="w-full h-fit bg-slate-900  p-5 ">
+    <div class="w-full h-fit bg-slate-900  p-5 mt-10" id="skills">
      
       <div class="w-full flex justify-center mt-5">
-        <h1 class="border-b-2 text-2xl font-bold border-white pb-3" data-aos="fade-down"
+        <h1 class="border-b-2 text-2xl font-bold border-white pb-3 mt-10" data-aos="fade-down"
         data-aos-duration="2000">SKILLS</h1>
       </div>
       <div class="w-full  md:px-24 px-4 py-5 mt-2">
@@ -238,7 +238,7 @@ body::-webkit-scrollbar-thumb
     </div>
     <!-- endskils -->
     <!-- experience -->
-    <div class="w-full h-fit bg-slate-900  p-5 " id="about">
+    <div class="w-full h-fit bg-slate-900  p-5 " id="experience">
      
       <div class="w-full flex justify-center mt-20" >
         <h1   class="border-b-2 text-2xl font-bold  border-white pb-3" data-aos="fade-down"
@@ -326,7 +326,7 @@ body::-webkit-scrollbar-thumb
 
     </div>
     <!-- end experience -->
-    <div class="w-full h-full bg-slate-900  p-5 ">
+    <div class="w-full h-full bg-slate-900  p-5 " id="portofolio">
      
       <div class="w-full flex justify-center mt-5">
         <h1 class="border-b-2 text-2xl font-bold  border-white pb-3" data-aos="fade-down"
@@ -338,14 +338,14 @@ body::-webkit-scrollbar-thumb
           <div data-aos="slide-right"
           data-aos-duration="2000" class="bg-slate-900 rounded-lg px-5 py-5 shadow-md shadow-teal-400 flex gap-5">
           <img src="./src/assets/img/port1.jpg" class="w-28" alt="">
-          <div class="w-full"><p class="font-bold text-xs  md:text-base border-b w-fit">Gate Manajemen System <p class="text-sm">(Universitas Indonesia)</p></p>
+          <div class="w-full"><p class="font-bold text-xs  md:text-base border-b w-fit">Gate Management System <p class="text-sm">(Universitas Indonesia)</p></p>
             <p class="mt-2">vuejs</p>  </div>
         </div>
 
         <div data-aos="slide-left"
         data-aos-duration="2000" class="bg-slate-900 rounded-lg px-5 py-5 shadow-md shadow-teal-400 flex gap-5">
         <img src="./src/assets/img/port2.jpg" class="w-28" alt="">
-        <div class="w-full"><p class="font-bold text-xs  md:text-base border-b w-fit">Profile Company <p class="text-sm">(PGNMAS)</p></p>
+        <div class="w-full"><a href="https://pgnmas.co.id" class="font-bold text-xs  md:text-base border-b w-fit">Profile Company <p class="text-sm">(PGNMAS)</p></a>
           <p class="mt-2">Codeigniter 3</p>  </div>
       </div>
      
@@ -359,7 +359,7 @@ body::-webkit-scrollbar-thumb
 
     <footer class="w-full bg-slate-800 shadow-lg px-5 py-5">
         <div class="w-full flex justify-center">
-            <a href=""><img src="./src/assets/img/WhatsApp.svg.webp" class="w-5 h-5 m-2" alt="">
+            <a href="https://wa.me/6289528995437"><img src="./src/assets/img/WhatsApp.svg.webp" class="w-5 h-5 m-2" alt="">
             </a>
             <a href="https://github.com/mhusendev"><img src="./src/assets/img/github.png" class="w-5 h-5 m-2" alt="">
             </a>
